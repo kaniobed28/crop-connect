@@ -3,10 +3,14 @@ import { Container, Typography, Button, Grid } from '@mui/material';
 
 const MainContent = () => {
   return (
-    <Container sx={{ py: 8 }}>
+    <Container sx={{ py: { xs: 4, md: 8 } }}>
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.5rem', md: '2rem' } }}
+          >
             For Farmers
           </Typography>
           <Typography variant="body1" color="text.secondary">
@@ -17,7 +21,11 @@ const MainContent = () => {
           </Button>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.5rem', md: '2rem' } }}
+          >
             For Buyers
           </Typography>
           <Typography variant="body1" color="text.secondary">
