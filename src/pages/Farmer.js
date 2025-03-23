@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Button, Box, Grid, Card, CardContent, Divider } from '@mui/material';
+import { Container, Typography, Button, Box, Grid, Card, CardContent } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -84,6 +84,7 @@ const Farmer = () => {
             },
           ].map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
+
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography variant="h6" gutterBottom sx={{ color: '#2e7d32' }}>
