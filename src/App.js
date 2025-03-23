@@ -1,17 +1,19 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Farmer from './pages/Farmer';
 
-const theme = createTheme({
-  palette: {
-    primary: { main: '#388e3c' }, // Green for farming vibe
-    secondary: { main: '#ff9800' }, // Orange for contrast
-  },
-});
-
-export default function App() {
+function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/farmer" element={<Farmer />} />
+        {/* Add more routes as needed */}
+        <Route path="*" element={<Home />} /> {/* Fallback route */}
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
