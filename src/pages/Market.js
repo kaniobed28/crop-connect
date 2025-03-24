@@ -70,28 +70,28 @@ const Market = () => {
               quantity: '500 Tons',
               price: 'GHS 1,200/Ton',
               location: 'Ashanti Region',
-              image: '/assets/produce-maize.jpg',
+              image: '/assets/maize.png',
             },
             {
               name: 'Yam',
               quantity: '300 Tons',
               price: 'GHS 1,500/Ton',
               location: 'Northern Region',
-              image: '/assets/produce-yam.jpg',
+              image: '/assets/yam.png',
             },
             {
               name: 'Rice',
               quantity: '400 Tons',
               price: 'GHS 2,000/Ton',
               location: 'Volta Region',
-              image: '/assets/produce-rice.jpg',
+              image: '/assets/rice.png',
             },
             {
               name: 'Cassava',
               quantity: '250 Tons',
               price: 'GHS 1,000/Ton',
               location: 'Central Region',
-              image: '/assets/produce-cassava.jpg',
+              image: '/assets/cassava.png',
             },
           ].map((produce, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
