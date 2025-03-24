@@ -54,18 +54,12 @@ const Farmer = () => {
           gutterBottom
           sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, textAlign: 'center', color: '#2e7d32' }}
         >
-          Services for Farmers
+          {/* Services for Farmers */}
         </Typography>
         <Grid container spacing={4}>
           {[
-            {
-              title: 'Access to Inputs',
-              description: 'Get quality seeds, fertilizers, and pesticides through our trusted suppliers.',
-            },
-            {
-              title: 'Mechanization Services',
-              description: 'Request tractors and equipment for efficient farming operations.',
-            },
+            
+            
             {
               title: 'Market Linkages',
               description: 'Connect with buyers and off-takers to sell your produce at fair prices.',
@@ -78,10 +72,7 @@ const Farmer = () => {
               title: 'Traceability',
               description: 'Track your inputs and produce from farm to market for transparency.',
             },
-            {
-              title: 'Insurance Support',
-              description: 'Protect your farm with affordable agricultural insurance plans.',
-            },
+            
           ].map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
 
