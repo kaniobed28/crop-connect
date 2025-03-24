@@ -113,32 +113,32 @@ const Home = () => {
               {
                 title: 'Ensure Food Availability',
                 description: 'Connect farmers with buyers to ensure a steady supply of fresh produce.',
-                icon: '/assets/icon-food-availability.png', // Placeholder icon
+                icon: '/assets/icon-food-availability.png',
               },
               {
                 title: 'Reduce Food Price Inflation',
                 description: 'Facilitate fair pricing by enabling direct trade between farmers and buyers.',
-                icon: '/assets/icon-price-inflation.png', // Placeholder icon
+                icon: '/assets/icon-price-inflation.png',
               },
               {
                 title: 'Promote Import Substitution',
                 description: 'Support local farmers to reduce reliance on imported agricultural products.',
-                icon: '/assets/icon-import-substitution.png', // Placeholder icon
+                icon: '/assets/icon-import-substitution.png',
               },
               {
                 title: 'Promote Exports',
                 description: 'Link farmers to global markets to increase agricultural exports.',
-                icon: '/assets/icon-exports.png', // Placeholder icon
+                icon: '/assets/icon-exports.png',
               },
               {
                 title: 'Job Creation',
                 description: 'Empower rural communities by creating opportunities in the agricultural sector.',
-                icon: '/assets/icon-job-creation.png', // Placeholder icon
+                icon: '/assets/icon-job-creation.png',
               },
               {
                 title: 'Ensure Food Security',
                 description: 'Build a resilient agricultural ecosystem for sustainable food production.',
-                icon: '/assets/icon-food-security.png', // Placeholder icon
+                icon: '/assets/icon-food-security.png',
               },
             ].map((goal, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
@@ -183,30 +183,30 @@ const Home = () => {
             {
               title: 'Become a Farmer',
               description: 'We help farms grow by providing access to markets, inputs, and delivery services.',
-              image: '/assets/service-farmer.jpg', // Placeholder image
+              image: '/assets/becomeafarmer.png',
               action: 'Join as a Farmer',
-              link: '/farmer', // Links to the Farmer page
+              link: '/become-a-farmer', // Updated link to BecomeAFarmer page
             },
             {
               title: 'Become a Buyer',
               description: 'Access organic and quality products directly from farmers at competitive prices.',
-              image: '/assets/service-buyer.jpg', // Placeholder image
+              image: '/assets/service-buyer.jpg',
               action: 'Join as a Buyer',
-              link: '/market', // Links to the Market page
+              link: '/market',
             },
             {
               title: 'Become a Supplier',
               description: 'Supply inputs to farmers and access a ready market through our platform.',
-              image: '/assets/service-supplier.jpg', // Placeholder image
+              image: '/assets/service-supplier.jpg',
               action: 'Join as a Supplier',
-              link: '#', // Placeholder link (can link to a supplier registration page)
+              link: '#',
             },
             {
               title: 'Become a Partner',
               description: 'Collaborate with CropConnect to support farmers and buyers in the agricultural ecosystem.',
-              image: '/assets/service-partner.jpg', // Placeholder image
+              image: '/assets/service-partner.jpg',
               action: 'Join as a Partner',
-              link: '#', // Placeholder link (can link to a partner registration page)
+              link: '#',
             },
           ].map((service, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
