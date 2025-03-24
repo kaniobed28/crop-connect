@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
-import { Link, useLocation } from 'react-router-dom'; // Add react-router for navigation
+import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const location = useLocation(); // To highlight active link
+  const location = useLocation();
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
 
+  // Removed "PFJ 2.0", "Resources", and "Agro Climate"
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About us', path: '/about' },
     { label: 'Farmer', path: '/farmer' },
     { label: 'Services', path: '/services' },
     { label: 'Market', path: '/market' },
-    { label: 'PFJ 2.0', path: '/pfj' },
-    { label: 'Resources', path: '/resources' },
-    { label: 'Agro Climate', path: '/agro-climate' },
   ];
 
   return (
