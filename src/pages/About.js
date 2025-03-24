@@ -65,7 +65,7 @@ const About = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/assets/farmer-working.jpg" // Placeholder image
+              src="/assets/cropconnect.jpg" // Placeholder image
               alt="Farmer working in field"
               sx={{
                 width: '100%',
@@ -139,22 +139,22 @@ const About = () => {
             {
               name: 'Ministry of Food and Agriculture',
               description: 'The Ministry of Food and Agriculture (MoFA) partners with CropConnect to support farmers with policy guidance, resources, and access to agricultural programs, ensuring sustainable growth and food security.',
-              logo: '/assets/partner-mofa.jpg', // Placeholder image
+              logo: '/assets/mofa.png', // Placeholder image
             },
             {
               name: 'Yango & Bolt',
               description: 'Yango and Bolt provide delivery services to ensure efficient transportation of produce from farmers to buyers, enhancing our supply chain.',
-              logo: '/assets/partner-yango-bolt.jpg', // Placeholder image
+              logo: '/assets/yangobolt.png', // Placeholder image
             },
             {
               name: 'MasterCard',
               description: 'MasterCard supports CropConnect by enabling secure and seamless payment solutions for farmers and buyers on our platform.',
-              logo: '/assets/partner-mastercard.jpg', // Placeholder image
+              logo: '/assets/mastercard.png', // Placeholder image
             },
             {
               name: 'KIC Innovation',
               description: 'KIC Innovation collaborates with CropConnect to drive agricultural innovation, providing farmers with access to modern farming techniques and technologies.',
-              logo: '/assets/partner-kic.jpg', // Placeholder image
+              logo: '/assets/kic.png', // Placeholder image
             },
           ].map((partner, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
