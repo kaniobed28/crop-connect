@@ -61,7 +61,7 @@ const Market = () => {
           color="text.secondary"
           sx={{ textAlign: 'center', mb: 4 }}
         >
-          Browse produce available in our designated warehouses, ready for purchase.
+          Browse maize and vegetables available in our designated warehouses, ready for purchase.
         </Typography>
         <Grid container spacing={4}>
           {[
@@ -73,25 +73,25 @@ const Market = () => {
               image: '/assets/maize.png',
             },
             {
-              name: 'Yam',
-              quantity: '300 Tons',
-              price: 'GHS 1,500/Ton',
-              location: 'Northern Region',
-              image: '/assets/yam.png',
+              name: 'Tomatoes',
+              quantity: '200 Tons',
+              price: 'GHS 1,800/Ton',
+              location: 'Greater Accra Region',
+              image: '/assets/tomatoes.png',
             },
             {
-              name: 'Rice',
-              quantity: '400 Tons',
+              name: 'Onions',
+              quantity: '150 Tons',
+              price: 'GHS 1,600/Ton',
+              location: 'Northern Region',
+              image: '/assets/onions.png',
+            },
+            {
+              name: 'Peppers',
+              quantity: '100 Tons',
               price: 'GHS 2,000/Ton',
               location: 'Volta Region',
-              image: '/assets/rice.png',
-            },
-            {
-              name: 'Cassava',
-              quantity: '250 Tons',
-              price: 'GHS 1,000/Ton',
-              location: 'Central Region',
-              image: '/assets/cassava.png',
+              image: '/assets/peppers.png',
             },
           ].map((produce, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
