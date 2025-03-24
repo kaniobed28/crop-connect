@@ -3,12 +3,12 @@ import { Container, Typography, Box, Grid, Card, CardContent, Button } from '@mu
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Home = () => {
+const Services = () => {
   return (
     <>
       <Header />
 
-      {/* Hero Section for Home Page */}
+      {/* Hero Section for Services Page */}
       <Box
         sx={{
           backgroundColor: '#e8f5e9',
@@ -22,40 +22,26 @@ const Home = () => {
             gutterBottom
             sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: '#2e7d32' }}
           >
-            Welcome to CropConnect
+            CropConnect Services
           </Typography>
           <Typography
             variant="h6"
             color="text.secondary"
             sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mb: 3 }}
           >
-            Connecting farmers and buyers for a sustainable agricultural future.
+            Join our platform as a farmer, buyer, supplier, or partner to grow your agricultural business.
           </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#2e7d32',
-              color: '#fff',
-              borderRadius: '20px',
-              px: 3,
-              py: 1,
-              '&:hover': { backgroundColor: '#1b5e20' },
-            }}
-            href="/services"
-          >
-            Explore Our Services
-          </Button>
         </Container>
       </Box>
 
-      {/* Services We Offer Section (Renamed from Get Involved) */}
+      {/* Services Section */}
       <Container sx={{ py: { xs: 4, md: 8 } }}>
         <Typography
           variant="h4"
           gutterBottom
           sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, textAlign: 'center', color: '#2e7d32' }}
         >
-          Services We Offer
+          Get Involved
         </Typography>
         <Grid container spacing={4}>
           {[
@@ -150,4 +136,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Services;

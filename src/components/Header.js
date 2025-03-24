@@ -19,19 +19,32 @@ const Header = () => {
     { label: 'Farmer', path: '/farmer' },
     { label: 'Services', path: '/services' },
     { label: 'Market', path: '/market' },
-    { label: 'Delivery Service', path: '/delivery-service' }, // Added Delivery Service
+    { label: 'Delivery Service', path: '/delivery-service' },
   ];
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
       <Toolbar>
-        {/* Logo/Title */}
-        <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, color: '#2e7d32', fontWeight: 'bold' }}
-        >
-          CropConnect
-        </Typography>
+        {/* Logo and Title */}
+        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+          <Box
+            component="img"
+            src="/assets/cropconnect.jpg" // Placeholder for company logo
+            alt="CropConnect Logo"
+            sx={{
+              width: '40px',
+              height: '40px',
+              mr: 1,
+              objectFit: 'contain',
+            }}
+          />
+          <Typography
+            variant="h6"
+            sx={{ color: '#2e7d32', fontWeight: 'bold' }}
+          >
+            CropConnect
+          </Typography>
+        </Box>
 
         {/* Desktop Navigation */}
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
