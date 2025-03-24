@@ -46,7 +46,7 @@ const About = () => {
               Our Mission
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-              At CropConnect, we aim to empower farmers by providing direct access to buyers, eliminating middlemen, and ensuring fair prices for their produce. We strive to create a transparent and efficient agricultural ecosystem that supports sustainable farming and food security.
+              At CropConnect, we aim to empower farmers by providing direct access to buyers and ensuring fair prices for their produce. We strive to create a transparent and efficient agricultural ecosystem that supports sustainable farming and food security.
             </Typography>
             <Button
               variant="contained"
@@ -91,17 +91,17 @@ const About = () => {
             {[
               {
                 title: 'Farmers Supported',
-                value: '10,000+',
-                description: 'We’ve empowered thousands of farmers with access to markets and resources.',
+                value: '750+',
+                description: 'We’ve empowered hundreds of farmers with access to markets and resources.',
               },
               {
                 title: 'Produce Sold',
-                value: '50,000+ Tons',
+                value: '1,200+ Tons',
                 description: 'Helped farmers sell their produce directly to buyers efficiently.',
               },
               {
                 title: 'Communities Impacted',
-                value: '500+',
+                value: '30+',
                 description: 'Supported rural communities through sustainable agriculture.',
               },
             ].map((impact, index) => (
@@ -124,6 +124,65 @@ const About = () => {
           </Grid>
         </Container>
       </Box>
+
+      {/* Partners Section */}
+      <Container sx={{ py: { xs: 4, md: 8 } }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, textAlign: 'center', color: '#2e7d32' }}
+        >
+          Our Partners
+        </Typography>
+        <Grid container spacing={4}>
+          {[
+            {
+              name: 'Ministry of Food and Agriculture',
+              description: 'The Ministry of Food and Agriculture (MoFA) partners with CropConnect to support farmers with policy guidance, resources, and access to agricultural programs, ensuring sustainable growth and food security.',
+              logo: '/assets/partner-mofa.jpg', // Placeholder image
+            },
+            {
+              name: 'Yango & Bolt',
+              description: 'Yango and Bolt provide delivery services to ensure efficient transportation of produce from farmers to buyers, enhancing our supply chain.',
+              logo: '/assets/partner-yango-bolt.jpg', // Placeholder image
+            },
+            {
+              name: 'MasterCard',
+              description: 'MasterCard supports CropConnect by enabling secure and seamless payment solutions for farmers and buyers on our platform.',
+              logo: '/assets/partner-mastercard.jpg', // Placeholder image
+            },
+            {
+              name: 'KIC Innovation',
+              description: 'KIC Innovation collaborates with CropConnect to drive agricultural innovation, providing farmers with access to modern farming techniques and technologies.',
+              logo: '/assets/partner-kic.jpg', // Placeholder image
+            },
+          ].map((partner, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent sx={{ textAlign: 'center' }}>
+                  <Box
+                    component="img"
+                    src={partner.logo}
+                    alt={partner.name}
+                    sx={{
+                      width: '100px',
+                      height: '100px',
+                      mb: 2,
+                      objectFit: 'contain',
+                    }}
+                  />
+                  <Typography variant="h6" sx={{ color: '#2e7d32' }}>
+                    {partner.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {partner.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
       {/* Team Section */}
       <Container sx={{ py: { xs: 4, md: 8 } }}>

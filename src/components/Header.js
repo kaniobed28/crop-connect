@@ -13,13 +13,13 @@ const Header = () => {
     setDrawerOpen(open);
   };
 
-  // Removed "PFJ 2.0", "Resources", and "Agro Climate"
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About us', path: '/about' },
     { label: 'Farmer', path: '/farmer' },
     { label: 'Services', path: '/services' },
     { label: 'Market', path: '/market' },
+    { label: 'Delivery Service', path: '/delivery-service' }, // Added Delivery Service
   ];
 
   return (
