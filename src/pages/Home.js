@@ -9,60 +9,80 @@ const Home = () => {
       <Header />
 
       {/* Hero Section for Home Page */}
-      <Box
+{/* Hero Section for Home Page */}
+<Box
+  sx={{
+    position: 'relative',
+    backgroundImage: 'url(/assets/famer.jpg)', // Replace with your image path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: '#e8f5e9',
+    py: { xs: 4, md: 6 },
+    textAlign: 'center',
+  }}
+>
+  {/* Overlay to enhance text visibility */}
+  <Box
+    sx={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.4)', // Dark overlay
+    }}
+  />
+  
+  <Container sx={{ position: 'relative', zIndex: 1 }}>
+    <Typography
+      variant="h3"
+      gutterBottom
+      sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: '#ffffff', textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}
+    >
+      Welcome to CropConnect
+    </Typography>
+    <Typography
+      variant="h6"
+      color="text.secondary"
+      sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mb: 3, color: '#ffffff', textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
+    >
+      A digital platform connecting farmers and buyers to trade produce and access market opportunities.
+    </Typography>
+    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+      <Button
+        variant="contained"
         sx={{
-          backgroundColor: '#e8f5e9',
-          py: { xs: 4, md: 6 },
-          textAlign: 'center',
+          backgroundColor: '#2e7d32',
+          color: '#fff',
+          borderRadius: '20px',
+          px: 3,
+          py: 1,
+          '&:hover': { backgroundColor: '#1b5e20' },
         }}
+        href="/market"
       >
-        <Container>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: '#2e7d32' }}
-          >
-            Welcome to CropConnect
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mb: 3 }}
-          >
-            A digital platform connecting farmers and buyers to trade produce and access market opportunities.
-          </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: '#2e7d32',
-                color: '#fff',
-                borderRadius: '20px',
-                px: 3,
-                py: 1,
-                '&:hover': { backgroundColor: '#1b5e20' },
-              }}
-              href="/market"
-            >
-              Trade Produce
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderColor: '#2e7d32',
-                color: '#2e7d32',
-                borderRadius: '20px',
-                px: 3,
-                py: 1,
-                '&:hover': { backgroundColor: '#e8f5e9' },
-              }}
-              href="/services"
-            >
-              Explore Services
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+        Trade Produce
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{
+          borderColor: '#2e7d32',
+          color: '#2e7d32',
+          borderRadius: '20px',
+          px: 3,
+          py: 1,
+          '&:hover': { backgroundColor: '#e8f5e9' },
+        }}
+        href="/services"
+      >
+        Explore Services
+      </Button>
+    </Box>
+  </Container>
+</Box>
+
+
 
       {/* About Our Startup Section */}
       <Container sx={{ py: { xs: 4, md: 8 } }}>
@@ -190,21 +210,21 @@ const Home = () => {
             {
               title: 'Become a Buyer',
               description: 'Access organic and quality products directly from farmers at competitive prices.',
-              image: '/assets/service-buyer.jpg',
+              image: '/assets/buy.png',
               action: 'Join as a Buyer',
               link: '/market',
             },
             {
               title: 'Become a Supplier',
               description: 'Supply inputs to farmers and access a ready market through our platform.',
-              image: '/assets/service-supplier.jpg',
+              image: '/assets/supply.png',
               action: 'Join as a Supplier',
               link: '#',
             },
             {
               title: 'Become a Partner',
               description: 'Collaborate with CropConnect to support farmers and buyers in the agricultural ecosystem.',
-              image: '/assets/service-partner.jpg',
+              image: '/assets/partner.png',
               action: 'Join as a Partner',
               link: '#',
             },
