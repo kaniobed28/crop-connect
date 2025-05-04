@@ -67,7 +67,7 @@ const Header = () => {
           <IconButton sx={{ color: '#424242', mx: 1 }}>
             <SearchIcon />
           </IconButton>
-          <Button
+          {/* <Button
             variant="contained"
             sx={{
               backgroundColor: '#2e7d32',
@@ -83,7 +83,7 @@ const Header = () => {
             to="/login"
           >
             Login
-          </Button>
+          </Button> */}
         </Box>
 
         {/* Mobile Menu Button */}

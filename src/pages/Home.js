@@ -9,8 +9,7 @@ const Home = () => {
       <Header />
 
       {/* Hero Section for Home Page */}
-{/* Hero Section for Home Page */}
-<Box
+      <Box
   sx={{
     position: 'relative',
     backgroundImage: 'url(/assets/famer.jpg)', // Replace with your image path
@@ -18,6 +17,7 @@ const Home = () => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundColor: '#e8f5e9',
+    minHeight: '80vh', // Ensures the image covers the full screen height
     py: { xs: 4, md: 6 },
     textAlign: 'center',
   }}
@@ -32,93 +32,70 @@ const Home = () => {
       height: '100%',
       backgroundColor: 'rgba(0, 0, 0, 0.4)', // Dark overlay
     }}
-  />
-  
-  <Container sx={{ position: 'relative', zIndex: 1 }}>
-    <Typography
+    />
+    
+    <Container sx={{ position: 'relative', zIndex: 1 }}>
+      <Typography
       variant="h3"
       gutterBottom
-      sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: '#ffffff', textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}
-    >
+      sx={{
+        fontSize: { xs: '3rem', md: '4rem' },
+        fontWeight: 'bold',
+        color: '#ffffff',
+        textShadow: '3px 3px 6px rgba(0,0,0,0.7)',
+      }}
+      >
       Welcome to CropConnect
-    </Typography>
-    <Typography
+      </Typography>
+      <Typography
       variant="h6"
       color="text.secondary"
-      sx={{ fontSize: { xs: '1rem', md: '1.25rem' }, mb: 3, color: '#ffffff', textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
-    >
+      sx={{
+        fontSize: { xs: '1.5rem', md: '2rem' },
+        fontWeight: 'bold',
+        mb: 3,
+        color: '#ffffff',
+        textShadow: '2px 2px 5px rgba(0,0,0,0.6)',
+      }}
+      >
       A digital platform connecting farmers and buyers to trade produce and access market opportunities.
-    </Typography>
-    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
       <Button
         variant="contained"
         sx={{
-          backgroundColor: '#2e7d32',
-          color: '#fff',
-          borderRadius: '20px',
-          px: 3,
-          py: 1,
-          '&:hover': { backgroundColor: '#1b5e20' },
+        backgroundColor: '#2e7d32',
+        color: '#fff',
+        borderRadius: '20px',
+        px: 4,
+        py: 1.5,
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        '&:hover': { backgroundColor: '#1b5e20' },
         }}
         href="/market"
       >
         Trade Produce
       </Button>
       <Button
-        variant="outlined"
+        variant="contained"
         sx={{
-          borderColor: '#2e7d32',
-          color: '#2e7d32',
-          borderRadius: '20px',
-          px: 3,
-          py: 1,
-          '&:hover': { backgroundColor: '#e8f5e9' },
+        backgroundColor: '#2e7d32',
+        color: '#fff',
+        borderRadius: '20px',
+        px: 4,
+        py: 1.5,
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        '&:hover': { backgroundColor: '#1b5e20' },
         }}
-        href="/services"
+        href="/market"
       >
         Explore Services
       </Button>
+      </Box>
+    </Container>
     </Box>
-  </Container>
-</Box>
-
-
-
-      {/* About Our Startup Section */}
-      <Container sx={{ py: { xs: 4, md: 8 } }}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, textAlign: 'center', color: '#2e7d32' }}
-        >
-          About Our Startup
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          sx={{ textAlign: 'center', maxWidth: '800px', mx: 'auto', mb: 4 }}
-        >
-          CropConnect is a startup dedicated to transforming agriculture by bridging the gap between farmers and buyers. Our mission is to empower farmers with direct access to markets, ensure fair prices for their produce, and create a transparent and efficient agricultural ecosystem. Through our platform, we support sustainable farming practices, enhance food security, and foster economic growth in rural communities.
-        </Typography>
-        <Box sx={{ textAlign: 'center' }}>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: '#2e7d32',
-              color: '#2e7d32',
-              borderRadius: '20px',
-              px: 3,
-              py: 1,
-              '&:hover': { backgroundColor: '#e8f5e9' },
-            }}
-            href="/about"
-          >
-            Learn More About Us
-          </Button>
-        </Box>
-      </Container>
-
-      {/* Objectives Section (Emulating GhAAP Goals) */}
       <Box sx={{ backgroundColor: '#f5f5f5', py: { xs: 4, md: 8 } }}>
         <Container>
           <Typography
@@ -163,26 +140,27 @@ const Home = () => {
             ].map((goal, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card sx={{ height: '100%', textAlign: 'center' }}>
-                  <CardContent>
-                    <Box
-                      component="img"
-                      src={goal.icon}
-                      alt={goal.title}
-                      sx={{
-                        width: '50px',
-                        height: '50px',
-                        mb: 2,
-                        objectFit: 'contain',
-                      }}
-                    />
-                    <Typography variant="h6" sx={{ color: '#2e7d32', mb: 1 }}>
-                      {goal.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {goal.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
+  <CardContent>
+    <Box
+      component="img"
+      src={goal.icon}
+      alt={goal.title}
+      sx={{
+        width: '100%',           // Stretch to full width
+        height: '120px',         // Increased height
+        mb: 2,
+        objectFit: 'contain',    // Ensures the image scales without distortion
+      }}
+    />
+    <Typography variant="h6" sx={{ color: '#2e7d32', mb: 1 }}>
+      {goal.title}
+    </Typography>
+    <Typography variant="body2" color="text.secondary">
+      {goal.description}
+    </Typography>
+  </CardContent>
+</Card>
+
               </Grid>
             ))}
           </Grid>
@@ -216,14 +194,14 @@ const Home = () => {
             },
             {
               title: 'Become a Supplier',
-              description: 'Supply inputs to farmers and access a ready market through our platform.',
+              description: 'Partner with Farmers to prodce and distribute agriculture produce  through our platform.',
               image: '/assets/supply.png',
               action: 'Join as a Supplier',
               link: '#',
             },
             {
               title: 'Become a Partner',
-              description: 'Collaborate with CropConnect to support farmers and buyers in the agricultural ecosystem.',
+              description: 'Collaborate with CropConnect to support farmers and buyers in the agricultural industy.',
               image: '/assets/partner.png',
               action: 'Join as a Partner',
               link: '#',
