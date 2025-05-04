@@ -1,9 +1,131 @@
-import React from 'react';
-import { Container, Typography, Button, Box, Grid, Card, CardContent } from '@mui/material';
+import React, { useState } from 'react';
+import {
+  Container,
+  Typography,
+  Button,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  Select,
+  MenuItem,
+} from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Farmer = () => {
+  // State for Supply Offer dialog
+  const [supplyDialogOpen, setSupplyDialogOpen] = useState(false);
+  const [selectedInstitution, setSelectedInstitution] = useState(null);
+  const [supplyFormData, setSupplyFormData] = useState({
+    farmerName: '',
+    email: '',
+    phone: '',
+    supply: '',
+    quantity: '',
+    deliveryDate: '',
+    notes: '',
+  });
+
+  // State for Registration dialog
+  const [registerDialogOpen, setRegisterDialogOpen] = useState(false);
+  const [registerFormData, setRegisterFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    farmLocation: '',
+    primaryCrops: '',
+    farmSize: '',
+    additionalInfo: '',
+  });
+
+  // Handle opening the Supply Offer dialog
+  const handleSupplyDialogOpen = (institution) => {
+    setSelectedInstitution(institution);
+    setSupplyFormData({
+      farmerName: '',
+      email: '',
+      phone: '',
+      supply: institution.supplies.split(', ')[0], // Default to first supply
+      quantity: '',
+      deliveryDate: '',
+      notes: '',
+    });
+    setSupplyDialogOpen(true);
+  };
+
+  // Handle closing the Supply Offer dialog
+  const handleSupplyDialogClose = () => {
+    setSupplyDialogOpen(false);
+    setSelectedInstitution(null);
+    setSupplyFormData({
+      farmerName: '',
+      email: '',
+      phone: '',
+      supply: '',
+      quantity: '',
+      deliveryDate: '',
+      notes: '',
+    });
+  };
+
+  // Handle Supply Offer form input changes
+  const handleSupplyInputChange = (e) => {
+    const { name, value } = e.target;
+    setSupplyFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle Supply Offer form submission
+  const handleSupplySubmit = () => {
+    console.log('Supply offer submitted:', { institution: selectedInstitution, formData: supplyFormData });
+    handleSupplyDialogClose();
+  };
+
+  // Handle opening the Registration dialog
+  const handleRegisterDialogOpen = () => {
+    setRegisterFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      farmLocation: '',
+      primaryCrops: '',
+      farmSize: '',
+      additionalInfo: '',
+    });
+    setRegisterDialogOpen(true);
+  };
+
+  // Handle closing the Registration dialog
+  const handleRegisterDialogClose = () => {
+    setRegisterDialogOpen(false);
+    setRegisterFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      farmLocation: '',
+      primaryCrops: '',
+      farmSize: '',
+      additionalInfo: '',
+    });
+  };
+
+  // Handle Registration form input changes
+  const handleRegisterInputChange = (e) => {
+    const { name, value } = e.target;
+    setRegisterFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle Registration form submission
+  const handleRegisterSubmit = () => {
+    console.log('Registration submitted:', { formData: registerFormData });
+    handleRegisterDialogClose();
+  };
+
   return (
     <>
       <Header />
@@ -41,6 +163,7 @@ const Farmer = () => {
               py: 1,
               '&:hover': { backgroundColor: '#1b5e20' },
             }}
+            onClick={handleRegisterDialogOpen}
           >
             Register Now
           </Button>
@@ -160,21 +283,21 @@ const Farmer = () => {
             {
               name: 'Kumasi Senior High School',
               type: 'School',
-              supplies: 'Maize, Rice',
+              supplies: 'Garden Eggs, Tomatoes',
               quantity: '10 Tons',
               availabilityDate: 'June 15, 2025',
             },
             {
               name: 'Opoku Ware School',
               type: 'School',
-              supplies: 'Yam, Plantain',
+              supplies: 'Tomatoes, Onions',
               quantity: '8 Tons',
               availabilityDate: 'July 1, 2025',
             },
             {
               name: 'Noble House',
               type: 'Restaurant',
-              supplies: 'Rice, Onions',
+              supplies: 'Onions',
               quantity: '4 Tons',
               availabilityDate: 'June 30, 2025',
             },
@@ -188,14 +311,14 @@ const Farmer = () => {
             {
               name: 'Prempeh College',
               type: 'School',
-              supplies: 'Maize, Vegetables',
+              supplies: 'Okra, Garden Eggs',
               quantity: '12 Tons',
               availabilityDate: 'June 20, 2025',
             },
             {
               name: 'Momo’s Pool Bar & Guest House',
               type: 'Restaurant',
-              supplies: 'Yam, Cassava',
+              supplies: 'Carrots, Tomatoes',
               quantity: '5 Tons',
               availabilityDate: 'July 15, 2025',
             },
@@ -228,6 +351,7 @@ const Farmer = () => {
                       py: 0.5,
                       '&:hover': { backgroundColor: '#1b5e20' },
                     }}
+                    onClick={() => handleSupplyDialogOpen(institution)}
                   >
                     Contact to Supply
                   </Button>
@@ -237,6 +361,191 @@ const Farmer = () => {
           ))}
         </Grid>
       </Container>
+
+      {/* Supply Offer Dialog */}
+      <Dialog open={supplyDialogOpen} onClose={handleSupplyDialogClose} maxWidth="sm" fullWidth>
+        <DialogTitle>Offer Supply to {selectedInstitution?.name}</DialogTitle>
+        <DialogContent>
+          <Box sx={{ mt: 2 }}>
+            <TextField
+              fullWidth
+              label="Farmer's Name"
+              name="farmerName"
+              value={supplyFormData.farmerName}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Contact Email"
+              name="email"
+              value={supplyFormData.email}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              type="email"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Contact Phone Number"
+              name="phone"
+              value={supplyFormData.phone}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              type="tel"
+              required
+            />
+            <TextField
+              fullWidth
+              select
+              label="Available Supply"
+              name="supply"
+              value={supplyFormData.supply}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              required
+            >
+              {selectedInstitution?.supplies.split(', ').map((supply) => (
+                <MenuItem key={supply} value={supply}>
+                  {supply}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              fullWidth
+              label="Quantity Offered (Tons)"
+              name="quantity"
+              value={supplyFormData.quantity}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              type="number"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Expected Delivery Date"
+              name="deliveryDate"
+              value={supplyFormData.deliveryDate}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              type="date"
+              InputLabelProps={{ shrink: true }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Additional Notes"
+              name="notes"
+              value={supplyFormData.notes}
+              onChange={handleSupplyInputChange}
+              margin="normal"
+              multiline
+              rows={3}
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleSupplyDialogClose} sx={{ color: '#2e7d32' }}>
+            Cancel
+          </Button>
+          <Button
+            onClick={handleSupplySubmit}
+            variant="contained"
+            sx={{ backgroundColor: '#2e7d32', '&:hover': { backgroundColor: '#1b5e20' } }}
+          >
+            Submit Offer
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Registration Dialog */}
+      <Dialog open={registerDialogOpen} onClose={handleRegisterDialogClose} maxWidth="sm" fullWidth>
+        <DialogTitle>Register with CropConnect</DialogTitle>
+        <DialogContent>
+          <Box sx={{ mt: 2 }}>
+            <TextField
+              fullWidth
+              label="Full Name"
+              name="fullName"
+              value={registerFormData.fullName}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Email Address"
+              name="email"
+              value={registerFormData.email}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              type="email"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phone"
+              value={registerFormData.phone}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              type="tel"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Farm Location"
+              name="farmLocation"
+              value={registerFormData.farmLocation}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              required
+            />
+            <TextField
+              fullWidth
+              label="Primary Crops"
+              name="primaryCrops"
+              value={registerFormData.primaryCrops}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              required
+              helperText="e.g., Maize, Tomatoes"
+            />
+            <TextField
+              fullWidth
+              label="Farm Size (Hectares)"
+              name="farmSize"
+              value={registerFormData.farmSize}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              type="number"
+            />
+            <TextField
+              fullWidth
+              label="Additional Information"
+              name="additionalInfo"
+              value={registerFormData.additionalInfo}
+              onChange={handleRegisterInputChange}
+              margin="normal"
+              multiline
+              rows={3}
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleRegisterDialogClose} sx={{ color: '#2e7d32' }}>
+            Cancel
+          </Button>
+          <Button
+            onClick={handleRegisterSubmit}
+            variant="contained"
+            sx={{ backgroundColor: '#2e7d32', '&:hover': { backgroundColor: '#1b5e20' } }}
+          >
+            Submit Registration
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {/* Contact/Support Section */}
       <Container sx={{ py: { xs: 4, md: 6 }, textAlign: 'center' }}>

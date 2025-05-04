@@ -25,11 +25,11 @@ const Header = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
       <Toolbar>
-        {/* Logo and Title */}
+        {/* Logo, Title, and Flags */}
         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
           <Box
             component="img"
-            src="/assets/cropconnect.jpg" // Placeholder for company logo
+            src="/assets/cropconnect.jpg"
             alt="CropConnect Logo"
             sx={{
               width: '40px',
@@ -40,10 +40,34 @@ const Header = () => {
           />
           <Typography
             variant="h6"
-            sx={{ color: '#2e7d32', fontWeight: 'bold' }}
+            sx={{ color: '#2e7d32', fontWeight: 'bold', mr: 1 }}
           >
             CropConnect
           </Typography>
+          {/* Flag Icons */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box
+              component="img"
+              src="/assets/ghana-flag.png"
+              alt="Ghana Flag"
+              sx={{
+                width: '24px',
+                height: '24px',
+                mr: 0.5,
+                objectFit: 'contain',
+              }}
+            />
+            <Box
+              component="img"
+              src="/assets/nigeria-flag.png"
+              alt="Nigeria Flag"
+              sx={{
+                width: '24px',
+                height: '24px',
+                objectFit: 'contain',
+              }}
+            />
+          </Box>
         </Box>
 
         {/* Desktop Navigation */}
@@ -67,23 +91,6 @@ const Header = () => {
           <IconButton sx={{ color: '#424242', mx: 1 }}>
             <SearchIcon />
           </IconButton>
-          {/* <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#2e7d32',
-              color: '#fff',
-              textTransform: 'none',
-              borderRadius: '20px',
-              px: 2,
-              py: 0.5,
-              '&:hover': { backgroundColor: '#1b5e20' },
-            }}
-            endIcon={<ArrowForwardIcon sx={{ color: '#ffca28' }} />}
-            component={Link}
-            to="/login"
-          >
-            Login
-          </Button> */}
         </Box>
 
         {/* Mobile Menu Button */}

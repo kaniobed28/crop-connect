@@ -64,7 +64,6 @@ const Market = () => {
 
   // Handle form submission
   const handleSubmit = () => {
-    // Log the form data for debugging (replace with API call or other logic)
     console.log('Form submitted:', { produce: selectedProduce, formData });
     handleClose();
   };
@@ -96,19 +95,7 @@ const Market = () => {
           >
             A platform to trade your produce and connect with buyers seamlessly.
           </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#2e7d32',
-              color: '#fff',
-              borderRadius: '20px',
-              px: 3,
-              py: 1,
-              '&:hover': { backgroundColor: '#1b5e20' },
-            }}
-          >
-            List Your Produce
-          </Button>
+          
         </Container>
       </Box>
 
@@ -338,17 +325,32 @@ const Market = () => {
             {[
               {
                 name: 'Basic',
-                description: 'Access core marketplace features and list up to 5 products.',
+                features: [
+                  'Access to local market listings',
+                  'Basic crop price updates (daily or weekly)',
+                  'Limited buyer/seller connections',
+                  'Chat support (limited hours)',
+                ],
                 link: '#',
               },
               {
                 name: 'Premium',
-                description: 'Unlimited product listings, priority support, and advanced analytics.',
+                features: [
+                  'Unlimited product listings',
+                  'Priority support',
+                  'Advanced market analytics',
+                  'Enhanced buyer/seller connections',
+                ],
                 link: '#',
               },
               {
                 name: 'Enterprise',
-                description: 'Custom solutions, dedicated account manager, and API access.',
+                features: [
+                  'Custom solutions',
+                  'Dedicated account manager',
+                  'Tailored market insights',
+                  'Personalized support from assigned advisors',
+                ],
                 link: '#',
               },
             ].map((plan, index) => (
@@ -358,9 +360,18 @@ const Market = () => {
                     <Typography variant="h6" sx={{ color: '#2e7d32' }}>
                       {plan.name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                      {plan.description}
-                    </Typography>
+                    <Box sx={{ mb: 2 }}>
+                      {plan.features.map((feature, idx) => (
+                        <Typography
+                          key={idx}
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mt: 0.5 }}
+                        >
+                          • {feature}
+                        </Typography>
+                      ))}
+                    </Box>
                     <Button
                       variant="outlined"
                       sx={{
