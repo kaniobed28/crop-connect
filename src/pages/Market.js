@@ -156,7 +156,7 @@ const Market = () => {
               image: '/assets/peppers.png',
               grade: 'C',
               certified: true,
-              rating: 3.5,
+              rating: 2,
             },
           ].map((produce, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
@@ -410,6 +410,7 @@ const Market = () => {
                       ))}
                     </Box>
                     <Button
+baden
                       variant="outlined"
                       sx={{
                         borderColor: '#2e7d32',

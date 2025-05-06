@@ -196,19 +196,19 @@ const About = () => {
         <Grid container spacing={4}>
           {[
             {
-              name: 'John Doe',
-              role: 'Founder & CEO',
-              description: 'Passionate about agriculture and technology, John leads CropConnect with a vision for sustainable farming.',
+              name: 'Esther Ohene-waa Atuobi',
+              role: 'Co-founder',
+              description: 'Passionate about agriculture and technology, Esther leads CropConnect with a vision for sustainable farming.',
             },
             {
-              name: 'Jane Smith',
-              role: 'Head of Operations',
-              description: 'Jane ensures smooth operations and farmer support across all regions.',
+              name: 'Juan Vázquez',
+              role: 'Founder',
+              description: 'Juan drives the development of our platform to make it user-friendly for farmers and buyers.',
             },
             {
-              name: 'Michael Brown',
-              role: 'Tech Lead',
-              description: 'Michael drives the development of our platform to make it user-friendly for farmers and buyers.',
+              name: 'Maryna Aleksiieva',
+              role: 'Market Strategy',
+              description: 'Maryna ensures smooth operations and farmer support across all regions.',
             },
           ].map((member, index) => (
             <Grid item xs={12} sm={4} key={index}>
