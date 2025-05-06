@@ -13,6 +13,7 @@ import {
   DialogActions,
   TextField,
   MenuItem,
+  Chip,
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -95,7 +96,6 @@ const Market = () => {
           >
             A platform to trade your produce and connect with buyers seamlessly.
           </Typography>
-          
         </Container>
       </Box>
 
@@ -123,6 +123,8 @@ const Market = () => {
               price: 'GHS 1,200/Ton',
               location: 'ADUM',
               image: '/assets/maize.png',
+              grade: 'A',
+              certified: true,
             },
             {
               name: 'Tomatoes',
@@ -130,6 +132,8 @@ const Market = () => {
               price: 'GHS 1,800/Ton',
               location: 'Bantama',
               image: '/assets/tomatoes.png',
+              grade: 'B',
+              certified: true,
             },
             {
               name: 'Onions',
@@ -137,6 +141,8 @@ const Market = () => {
               price: 'GHS 1,600/Ton',
               location: 'Deduako',
               image: '/assets/onions.png',
+              grade: 'A',
+              certified: true,
             },
             {
               name: 'Peppers',
@@ -144,6 +150,8 @@ const Market = () => {
               price: 'GHS 2,000/Ton',
               location: 'Tafo',
               image: '/assets/peppers.png',
+              grade: 'C',
+              certified: true,
             },
           ].map((produce, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
@@ -168,23 +176,39 @@ const Market = () => {
                   <Typography variant="body2" color="text.secondary">
                     Price: {produce.price}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  <Typography variant="body2" color="text.secondary">
                     Location: {produce.location}
                   </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: '#2e7d32',
-                      color: '#fff',
-                      borderRadius: '20px',
-                      px: 2,
-                      py: 0.5,
-                      '&:hover': { backgroundColor: '#1b5e20' },
-                    }}
-                    onClick={() => handleOpen(produce)}
-                  >
-                    Request
-                  </Button>
+                  <Typography variant="body2" color="text.secondary">
+                    Grade: {produce.grade}
+                  </Typography>
+                  {produce.certified && (
+                    <Chip
+                      label="Certified"
+                      size="small"
+                      sx={{
+                        mt: 1,
+                        backgroundColor: '#2e7d32',
+                        color: '#fff',
+                      }}
+                    />
+                  )}
+                  <Box sx={{ mt: 2 }}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: '#2e7d32',
+                        color: '#fff',
+                        borderRadius: '20px',
+                        px: 2,
+                        py: 0.5,
+                        '&:hover': { backgroundColor: '#1b5e20' },
+                      }}
+                      onClick={() => handleOpen(produce)}
+                    >
+                      Request
+                    </Button>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>
