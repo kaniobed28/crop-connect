@@ -14,6 +14,7 @@ import {
   TextField,
   MenuItem,
   Chip,
+  Rating,
 } from '@mui/material';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -125,6 +126,7 @@ const Market = () => {
               image: '/assets/maize.png',
               grade: 'A',
               certified: true,
+              rating: 4.5,
             },
             {
               name: 'Tomatoes',
@@ -134,6 +136,7 @@ const Market = () => {
               image: '/assets/tomatoes.png',
               grade: 'B',
               certified: true,
+              rating: 3.8,
             },
             {
               name: 'Onions',
@@ -143,6 +146,7 @@ const Market = () => {
               image: '/assets/onions.png',
               grade: 'A',
               certified: true,
+              rating: 4.2,
             },
             {
               name: 'Peppers',
@@ -152,6 +156,7 @@ const Market = () => {
               image: '/assets/peppers.png',
               grade: 'C',
               certified: true,
+              rating: 3.5,
             },
           ].map((produce, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
@@ -182,12 +187,20 @@ const Market = () => {
                   <Typography variant="body2" color="text.secondary">
                     Grade: {produce.grade}
                   </Typography>
+                  <Box sx={{ mt: 1, mb: 1 }}>
+                    <Rating
+                      value={produce.rating}
+                      precision={0.1}
+                      readOnly
+                      size="small"
+                    />
+                  </Box>
                   {produce.certified && (
                     <Chip
                       label="Certified"
                       size="small"
                       sx={{
-                        mt: 1,
+                        mb: 2,
                         backgroundColor: '#2e7d32',
                         color: '#fff',
                       }}
