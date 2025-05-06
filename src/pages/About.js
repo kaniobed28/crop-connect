@@ -142,7 +142,7 @@ const About = () => {
             {[
               {
                 title: 'Farmers Empowered',
-                value: '5,000+',
+                value: '500+',
                 description: 'Empowered farmers with access to markets and real-time agricultural support.',
               },
               {

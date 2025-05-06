@@ -122,11 +122,11 @@ const Home = () => {
                 description: 'Support local farmers to reduce reliance on imported agricultural products.',
                 icon: '/assets/icon-import-substitution.png',
               },
-              {
-                title: 'Promote Exports',
-                description: 'Link farmers to global markets to increase agricultural exports.',
-                icon: '/assets/icon-exports.png',
-              },
+              // {
+              //   title: 'Promote Exports',
+              //   description: 'Link farmers to global markets to increase agricultural exports.',
+              //   icon: '/assets/icon-exports.png',
+              // },
               {
                 title: 'Job Creation',
                 description: 'Empower rural communities by creating opportunities in the agricultural sector.',
