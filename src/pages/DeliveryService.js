@@ -113,6 +113,11 @@ const DeliveryService = () => {
                 description: 'Bolt provides efficient logistics support to get your produce to market on time.',
                 logo: '/assets/partner-bolt.jpg', // Placeholder image
               },
+              {
+                name: 'Kobo360',
+                description: 'Kobo360 offers seamless logistics solutions in Nigeria, connecting farmers to buyers with real-time tracking.',
+                logo: '/assets/partner-kobo360.jpg', // Placeholder image
+              },
             ].map((partner, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card sx={{ height: '100%' }}>
