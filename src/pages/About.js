@@ -87,6 +87,14 @@ const About = () => {
           >
             Our Impact
           </Typography>
+          {/* Impact in Ghana */}
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, mt: 4, textAlign: 'center', color: '#2e7d32' }}
+          >
+            Impact in Ghana
+          </Typography>
           <Grid container spacing={4}>
             {[
               {
@@ -103,6 +111,49 @@ const About = () => {
                 title: 'Communities Impacted',
                 value: '30+',
                 description: 'Supported rural communities through sustainable agriculture.',
+              },
+            ].map((impact, index) => (
+              <Grid item xs={12} sm={4} key={index}>
+                <Card sx={{ height: '100%', textAlign: 'center' }}>
+                  <CardContent>
+                    <Typography variant="h5" sx={{ color: '#2e7d32', mb: 1 }}>
+                      {impact.value}
+                    </Typography>
+                    <Typography variant="h6" gutterBottom sx={{ color: '#2e7d32' }}>
+                      {impact.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {impact.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+          {/* Impact in Nigeria */}
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' }, mt: 6, textAlign: 'center', color: '#2e7d32' }}
+          >
+            Impact in Nigeria
+          </Typography>
+          <Grid container spacing={4}>
+            {[
+              {
+                title: 'Farmers Empowered',
+                value: '5,000+',
+                description: 'Empowered farmers with access to markets and real-time agricultural support.',
+              },
+              {
+                title: 'Yield Boost',
+                value: '30%',
+                description: 'Increased agricultural yields through innovative farming practices.',
+              },
+              {
+                title: 'Rural Incomes',
+                value: 'Increased',
+                description: 'Boosted rural incomes with sustainable farming initiatives.',
               },
             ].map((impact, index) => (
               <Grid item xs={12} sm={4} key={index}>

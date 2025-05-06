@@ -89,7 +89,7 @@ const Home = () => {
         fontSize: '1rem',
         '&:hover': { backgroundColor: '#1b5e20' },
         }}
-        href="/market"
+        href="/services"
       >
         Explore Services
       </Button>

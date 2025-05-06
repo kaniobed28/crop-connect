@@ -109,8 +109,8 @@ const DeliveryService = () => {
                 logo: '/assets/partner-yango.jpg', // Placeholder image
               },
               {
-                name: 'Bolt',
-                description: 'Bolt provides efficient logistics support to get your produce to market on time.',
+                name: ' Bethel logistics',
+                description: 'Bethel  provides efficient logistics support to get your produce to market on time.',
                 logo: '/assets/partner-bolt.jpg', // Placeholder image
               },
               {
