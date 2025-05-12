@@ -5,8 +5,6 @@ import {
   Button,
   Box,
   Grid,
-  Card,
-  CardContent,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -43,20 +41,7 @@ const Farmer = () => {
     additionalInfo: '',
   });
 
-  // Handle opening the Supply Offer dialog
-  const handleSupplyDialogOpen = (institution) => {
-    setSelectedInstitution(institution);
-    setSupplyFormData({
-      farmerName: '',
-      email: '',
-      phone: '',
-      supply: institution.supplies.split(', ')[0], // Default to first supply
-      quantity: '',
-      deliveryDate: '',
-      notes: '',
-    });
-    setSupplyDialogOpen(true);
-  };
+
 
   // Handle closing the Supply Offer dialog
   const handleSupplyDialogClose = () => {
@@ -183,89 +168,10 @@ const Farmer = () => {
           color="text.secondary"
           sx={{ textAlign: 'center', mb: 4 }}
         >
-          Connect with schools and restaurants in Kumasi needing agricultural supplies. Choose an institution you can supply based on their needs and availability dates.
+          Connect with schools and restaurants needing agricultural supplies. Choose an institution you can supply based on their needs and availability dates.
         </Typography>
         <Grid container spacing={4}>
-          {[
-            {
-              name: 'Kumasi Senior High School',
-              type: 'School',
-              supplies: 'Garden Eggs, Tomatoes',
-              quantity: '10 Tons',
-              availabilityDate: 'June 15, 2025',
-            },
-            {
-              name: 'Opoku Ware School',
-              type: 'School',
-              supplies: 'Tomatoes, Onions',
-              quantity: '8 Tons',
-              availabilityDate: 'July 1, 2025',
-            },
-            {
-              name: 'Noble House',
-              type: 'Restaurant',
-              supplies: 'Onions',
-              quantity: '4 Tons',
-              availabilityDate: 'June 30, 2025',
-            },
-            {
-              name: 'Somewhere in Kumasi',
-              type: 'Restaurant',
-              supplies: 'Tomatoes, Peppers',
-              quantity: '3 Tons',
-              availabilityDate: 'July 10, 2025',
-            },
-            {
-              name: 'Prempeh College',
-              type: 'School',
-              supplies: 'Okra, Garden Eggs',
-              quantity: '12 Tons',
-              availabilityDate: 'June 20, 2025',
-            },
-            {
-              name: 'Momo’s Pool Bar & Guest House',
-              type: 'Restaurant',
-              supplies: 'Carrots, Tomatoes',
-              quantity: '5 Tons',
-              availabilityDate: 'July 15, 2025',
-            },
-          ].map((institution, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ height: '100%' }}>
-                <CardContent>
-                  <Typography variant="h6" sx={{ color: '#2e7d32' }}>
-                    {institution.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Type: {institution.type}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Supplies Needed: {institution.supplies}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Quantity: {institution.quantity}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    Available By: {institution.availabilityDate}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: '#2e7d32',
-                      color: '#fff',
-                      borderRadius: '20px',
-                      px: 2,
-                      py: 0.5,
-                      '&:hover': { backgroundColor: '#1b5e20' },
-                    }}
-                    onClick={() => handleSupplyDialogOpen(institution)}
-                  >
-                    Contact to Supply
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          {/* Institution list removed */}
         </Grid>
       </Container>
 

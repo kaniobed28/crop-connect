@@ -86,7 +86,7 @@ const Market = () => {
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: '#2e7d32' }}
+            sx={{ fontSize: { xs: '2rem', md: '3 partid' }, color: '#2e7d32' }}
           >
             CropConnect Market
           </Typography>
@@ -349,86 +349,31 @@ const Market = () => {
             gutterBottom
             sx={{ fontSize: { xs: '1.5rem', md: '2rem' }, textAlign: 'center', color: '#2e7d32' }}
           >
-            Subscription Plans
+            Subscription
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ textAlign: 'center', mb: 4 }}
           >
-            Unlock premium features with our subscription plans to enhance your trading experience.
+            Contact us for Subscription to our services.
           </Typography>
-          <Grid container spacing={4}>
-            {[
-              {
-                name: 'Basic',
-                features: [
-                  'Access to local market listings',
-                  'Basic crop price updates (daily or weekly)',
-                  'Limited buyer/seller connections',
-                  'Chat support (limited hours)',
-                ],
-                link: '#',
-              },
-              {
-                name: 'Premium',
-                features: [
-                  'Unlimited product listings',
-                  'Priority support',
-                  'Advanced market analytics',
-                  'Enhanced buyer/seller connections',
-                ],
-                link: '#',
-              },
-              {
-                name: 'Enterprise',
-                features: [
-                  'Custom solutions',
-                  'Dedicated account manager',
-                  'Tailored market insights',
-                  'Personalized support from assigned advisors',
-                ],
-                link: '#',
-              },
-            ].map((plan, index) => (
-              <Grid item xs={12} sm={4} key={index}>
-                <Card sx={{ height: '100%' }}>
-                  <CardContent>
-                    <Typography variant="h6" sx={{ color: '#2e7d32' }}>
-                      {plan.name}
-                    </Typography>
-                    <Box sx={{ mb: 2 }}>
-                      {plan.features.map((feature, idx) => (
-                        <Typography
-                          key={idx}
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{ mt: 0.5 }}
-                        >
-                          • {feature}
-                        </Typography>
-                      ))}
-                    </Box>
-                    <Button
-baden
-                      variant="outlined"
-                      sx={{
-                        borderColor: '#2e7d32',
-                        color: '#2e7d32',
-                        borderRadius: '20px',
-                        px: 2,
-                        py: 0.5,
-                        '&:hover': { backgroundColor: '#e8f5e9' },
-                      }}
-                      href={plan.link}
-                    >
-                      Choose Plan
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+          <Box sx={{ textAlign: 'center' }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#2e7d32',
+                color: '#fff',
+                borderRadius: '20px',
+                px: 2,
+                py: 0.5,
+                '&:hover': { backgroundColor: '#1b5e20' },
+              }}
+              href="mailto:contact@cropconnect.com"
+            >
+              Contact Us
+            </Button>
+          </Box>
         </Container>
       </Box>
 
